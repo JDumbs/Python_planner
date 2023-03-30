@@ -1,3 +1,8 @@
+import time
+
+
+
+
 def note():
     print("What is the name of your note?")
     note_name = input("> ")
@@ -17,6 +22,16 @@ def view():
         f = open(note_name+".txt", "r")
         print(f.read())
 
+def timer():
+    print("What is the name for this timer?")
+    name = input("> ")
+    print("Please set the amount of time in minutes")
+    minutes = int(input("> "))
+    timer_set = minutes * 60
+    print("Timer set")
+    time.sleep(timer_set)
+    print(name)
+
 
 print("Welcome to PyPlanner were we help you get on track")
 print("Add a new [note] or start a new [timer],[alarm],[settings],or [quit]")
@@ -28,4 +43,6 @@ while True:
         note()
     if choice == "view":
         view()
+    if choice == "timer":
+        timer()
 
